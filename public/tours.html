@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Document</title>
+  </head>
+
+  <body class="bg-slate-700">
+    <div class="relative inset-0 p-4 flex justify-between">
+      <img src="./assets/rescate logo 2.jpg" class="w-[48px] h-[48px]" alt="" />
+
+      <form class="w-full max-w-lg"  id="form" action="./tours.script.js">
+        <div class="flex items-center mx-auto border-b border-teal-500 py-2 ">
+          <input
+            class="appearance-none rounded-[45px] bg-gray-600 border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none"
+            id="entrada"
+            type="text"
+            placeholder="Ingresa tu nombre"
+            aria-label="Full name"
+          />
+          <input
+          class="appearance-none rounded-[45px] bg-gray-600 border-none w-full text-white mr-3 py-1 px-2 leading-tight focus:outline-none"
+          id="edad"
+          type="number"
+          placeholder="Ingresa tu edad"
+          aria-label="Full name"
+        />
+          <button
+            type="submit"
+            class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded"
+          >
+            Enviar
+          </button>
+        </div>
+      </form>
+
+      <div class="flex items-center">
+        <img
+          src="./assets/ticket-solid.svg"
+          alt=""
+          width="24px"
+          height="24px"
+          id="img"
+        />
+        <span class="" id="welcome" class="mx-2">Bienvenido</span>
+      </div>
+    </div>
+
+    <div class="md:w-[1100px] md:mt-[100px] p-4 mx-auto rounded-lg">
+      <div class="w-full">
+        <h1 class="text-center font-semibold text-2xl">Tour y Fechas</h1>
+      </div>
+      <div id="tabla" class="h-[350px] overflow-scroll">
+        <table
+          class="table-fixed 2xl:h-[200px] my-[50px] bg-gray-900 border-t border-slate-500 w-full mx-auto"
+        >
+          <thead class="border-collapse border-t border-slate-500 h-[50px]">
+            <tr>
+              <th>Fecha</th>
+              <th>Lugar</th>
+              <th>Disponibilidad</th>
+            </tr>
+          </thead>
+          <tbody class="border-collapse border-t border-slate-500">
+            <tr class="border-collapse border-t border-slate-500 h-[50px]">
+              <td id="f1" class="text-center xs:font-bold">
+                Sabado, 2 de Octubre
+              </td>
+              <td id="d1" class="text-center">Buenos Aires</td>
+              <td class="">
+                <button
+                  id="0"
+                  onclick="responseButton(event)"
+                  class="items-center mx-auto p-2 justify-center flex rounded-full font-medium bg-slate-500 basis-1 w-[90px]"
+                >
+                  Tickets
+                </button>
+              </td>
+            </tr>
+
+            <tr class="border-collapse border-t border-slate-500 h-[50px]">
+              <td id="f2" class="text-center">Lunes, 4 de Noviembre</td>
+              <td id="d2" class="text-center">Salta</td>
+              <td class="">
+                <button
+                  id="1"
+                  onclick="responseButton(event)"
+                  class="items-center mx-auto p-2 justify-center flex rounded-full font-medium bg-slate-500 basis-1 w-[90px]"
+                >
+                  Tickets
+                </button>
+              </td>
+            </tr>
+
+            <tr class="border-collapse border-t border-slate-500 h-[50px]">
+              <td id="f3" class="text-center">Martes, 6 de Diciembre</td>
+              <td id="d3" class="text-center">Tucuman</td>
+              <td class="">
+                <button
+                  id="2"
+                  onclick="responseButton(event)"
+                  class="items-center mx-auto p-2 justify-center flex rounded-full font-medium bg-slate-500 basis-1 w-[90px]"
+                >
+                  Tickets
+                </button>
+              </td>
+            </tr>
+
+            <tr class="border-collapse border-t border-slate-500 h-[50px]">
+              <td id="f4" class="text-center">Miercoles, 8 de Marzo</td>
+              <td id="d4" class="text-center">Chubut</td>
+              <td class="">
+                <button
+                  id="3"
+                  onclick="responseButton(event)"
+                  class="items-center mx-auto p-2 justify-center flex rounded-full font-medium bg-slate-500 basis-1 w-[90px]"
+                >
+                  Tickets
+                </button>
+              </td>
+            </tr>
+
+            <tr class="border-collapse border-t border-slate-500 h-[50px]">
+              <td id="f5" class="text-center">Jueves, 10 de Julio</td>
+              <td id="d5" class="text-center">Corrientes</td>
+              <td class="">
+                <button
+                  id="4"
+                  onclick="responseButton(event)"
+                  class="items-center mx-auto p-2 justify-center flex rounded-full font-medium bg-slate-500 basis-1 w-[90px]"
+                >
+                  Tickets
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+
+  <script src="./tours.script.js"></script>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Editar Album</title>
+</head>
+<body>
+    <div class="flex flex-colum h-screen">
+
+        <div>
+      
+          <div class="bg-slate-800 w-[200px] h-full grid gap-y-4  content-start
+          divide-y">
+    
+          <div class="mt-2 ml-1">
+            <div class="flex items-center">
+              <img class="h-[46px] w-[46px] rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Image Description" />
+              <div class="ml-3">
+                <h3 class="font-semibold text-gray-300">Carlos RR</h3>
+                <p class="text-sm font-medium text-gray-400">carlos.rr@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-white text-center ">
+            <a  href="./index.html">
+              <h1 class="font-semibold mt-[10px]"> Other Albums </h1>
+            </a>
+          </div>
+          <div class="text-white text-center">
+            <button onclick="editEvent()">
+              <h1 class="font-semibold mt-[10px]"> Edit Album 
+            </button>
+          </div>
+          <div class="text-white text-center">
+            <button onclick="addSongEvent()">
+              <h1 class="font-semibold mt-[10px]"> Add Songs </h1>
+            </button>
+          </div>
+          <div class="text-white text-center ">
+            <a href="./login.html">
+              <h1 class="font-semibold mt-[10px]"> Log Out </h1>
+            </a>
+          </div>
+          </div>
+        </div>
+    
+        <div class="w-[100%] relative z-100">
+    
+         
+        <form class="max-w-[400px] mx-auto mt-12 bg-white/80 p-4 rounded-[15px] z-50 my-auto" id="form">
+
+          <div>
+            <h3 class="font-medium text-2xl text-blue-800 text-center  z-50">Editar Album</h3>
+        </div>
+        
+          <div class="relative  mb-6 group z-50">
+            <input
+              type="text"
+              name="titulo"
+              id="titulo"
+              class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+              placeholder=""
+              required
+            />
+            <label
+              for="titulo"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Titulo</label
+            >
+          </div>
+       
+    
+          <div class="grid md:grid-cols-1 md:gap-6">
+            <div class="relative z-0 w-full">
+              <input
+                type="date"
+                name="fechaVenta"
+                id="fechaVenta"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
+                required
+              />
+              <label
+                for="fechaVenta"
+                class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                >Año de Lanzamiento</label
+              >
+            </div>
+            <div class="relative z-0 w-full">
+              <label
+              for="descripcion"
+              class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+              >Descripción</label
+            >
+              <textarea
+                type="text"
+                name="descripcion"
+                id="descripcion"
+                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                placeholder=" "
+                requiredC
+              >
+            
+            </textarea>
+            </div>
+    
+            <div class="relative z-0 group ">
+                <input
+                  type="url"
+                  name="url"
+                  id="url"
+                  class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                  placeholder=""
+                  required
+                />
+                <label
+                  for="url"
+                  class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+                  >Ingresar URL</label
+                >
+              </div>
+    
+              <div class="flex space-x-6">
+                <button
+                type="submit"
+                class="text-white mt-4 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-[200px]  px-5 py-2.5 text-center"
+              >
+                Save
+              </button>
+        
+              <button
+              type="submit"
+              onclick="cancelEvent()"
+              class="text-white mt-4 bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-[200px]  px-5 py-2.5 text-center"
+            >
+              Cancel
+            </button>
+              </div>
+        </form>
+        <img src="./assets/guitarra-acustica-tambor-sobre-fondo-negro-aislado.jpg" class="object-right-top absolute inset-0 w-full h-screen opacity-100 -z-10" alt="">
+          
+          </div>
+        
+        </div>
+      </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+  <script src="./editAlbum.js" type="module"></script>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <title>Document</title>
+</head>
+<body class="bg-slate-800 bg-[url('./assets/guitarra-acustica-tambor-sobre-fondo-negro-aislado.jpg')] bg-cover">
+    <div class="flex flex-colum h-screen">
+
+        <div>
+      
+          <div class="bg-slate-800 w-[200px] h-full grid gap-y-4  content-start
+          divide-y">
+    
+          <div class="mt-2 ml-1">
+            <div class="flex items-center">
+              <img class="h-[46px] w-[46px] rounded-full" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80" alt="Image Description" />
+              <div class="ml-3">
+                <h3 class="font-semibold text-gray-300">Carlos RR</h3>
+                <p class="text-sm font-medium text-gray-400">carlos.rr@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          
+            <div class="text-white text-center ">
+              <a  href="./index.html">
+                <h1 class="font-semibold mt-[10px]"> Other Albums </h1>
+              </a>
+            </div>
+            <div class="text-white text-center ">
+              <a onclick="" href="./editAlbum.html" id="editAlbum">
+                <h1 class="font-semibold mt-[10px]"> Edit Album </h1>
+              </a>
+            </div>
+            <div class="text-white text-center ">
+              <a href="./addSong.html" id="addSong">
+                <h1 class="font-semibold mt-[10px]"> Add Songs </h1>
+              </a>
+            </div>
+            <div class="text-white text-center ">
+              <a href="./login.html">
+                <h1 class="font-semibold mt-[10px]"> Log Out </h1>
+              </a>
+            </div>
+          </div>
+        </div>
+    
+        <div class="min-w-[1200px] relative z-100">
+    
+            <div class="mt-2 ml-1">
+                <div class="flex items-center">
+                    <img
+                    src="./assets/rescate-indudablemente.jpg"
+                    alt=""
+                    class="object-cover w-full rounded-t-lg h-12 ml-5 my-5 md:h-[200px] md:w-[200px] md:rounded-[20px]"
+                  />
+                  <div class="ml-3">
+                    <h3 class="font-normal text-2xl text-gray-300">LISTA</h3>
+                    <p id = "titulo" class="font-bold text-4xl text-gray-400">INDUDABLEMENTE</p>
+                    <p id = "fecha" class="font-bold text-1xl text-gray-400">Publicado el 13 de septiembre de 2014</p>
+                    <p id = "cantCanciones" class="font-bold text-1xl text-gray-400">12 canciones - 1 hrs</p>
+                  </div>
+                </div>
+              </div>
+
+       
+       
+
+           <div class="overflow-auto h-1/2">
+            
+            <!-- "min-h-full" fue sacado -->
+            <table id="tablaMayor" class="table-fixed overflow-y-auto max-h-sm  my-[50px] bg-gray-900  border-t border-slate-500 w-[1100px] ml-6" >
+                <!-- <tbody id="tabla" class="border-collapse border-t border-slate-500"> -->
+                   <!-- <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>1. Y además</td>
+                    <td>3:59</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player">
+                        <source src="./assets/Y2meta.app - Y Además (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button> -->
+                      <!-- <button onclick="document.getElementById('player').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button> -->
+                    <!-- </td> -->
+                  <!-- </tr> -->
+                  <!--  
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>2. El veneno</td>
+                    <td>3:41</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player2">
+                        <source src="./assets/Y2meta.app - El Veneno (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player2').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player2').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>3. Porque estás aquí</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player3">
+                        <source src="./assets/Y2meta.app - Rescate - Porque estás aquí (Videosencillo) (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player3').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player3').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>4. Tiene razón</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player4">
+                        <source src="./assets/Y2meta.app - Rescate - Tiene razón HD (Video Oficial) (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player4').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player4').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>5. Hello!</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player5">
+                        <source src="./assets/Y2meta.app - Hello! - Rescate (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player5').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player5').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>6. ¡Ay! ¡Ay! ¡Ay!</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player6">
+                        <source src="./assets/Y2meta.app - ¡Ay! ¡Ay! ¡Ay! (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player6').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player6').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>7. Indudablemente</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player7">
+                        <source src="./assets/Y2meta.app - Rescate - Indudablemente  (Videoclip oficial) (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player7').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player7').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>8. Yo no abandono</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player8">
+                        <source src="./assets/Y2meta.app - Rescate - Yo No Abandono en Kenia (Videolyric) (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player8').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player8').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>9. La otra orilla</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player9">
+                        <source src="./assets/Y2meta.app - La otra orilla - Rescate (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player9').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player9').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>10. Un poco locos</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player10">
+                        <source src="./assets/Y2meta.app - Un poco locos - Rescate (128 kbps).mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player10').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player10').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                  </tr>
+                  <tr class="border-collapse border-t border-slate-500 h-[50px]">
+                    <td>11. El sueño</td>
+                    <td>3:45</td>
+                    <td><img src="./assets/icons8-eliminar (1).svg" alt="" class="w-[24px] h-[24px]"></td>
+                    <td class="">
+                      <audio id="player11" >
+                        <source src="./assets/Y2meta.app - El sueño - Rescate (128 kbps).mp3" type="audio/mp3" preload="auto" >
+                      </audio>
+                      <button onclick="document.getElementById('player11').play()"><svg class="w-4 h-4 text-black mr-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 16">
+                        <path d="M0 .984v14.032a1 1 0 0 0 1.506.845l12.006-7.016a.974.974 0 0 0 0-1.69L1.506.139A1 1 0 0 0 0 .984Z"/>
+                      </svg></button>
+                      <button onclick="document.getElementById('player11').pause()"><svg class="w-4 h-4 text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 12 16">
+                        <path d="M3 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm7 0H9a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Z"/>
+                      </svg></button>
+                    </td>
+                      
+                  </tr> -->
+                </tbody>
+              </table>
+          </div>
+      
+        
+          
+          </div>
+        
+        </div>
+      </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+<script src="./album.js" type="module"></script>
+
+</html>
