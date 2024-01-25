@@ -44,7 +44,7 @@ let svgString3 = `
 
 
 const redirect = (id) => {
-  window.location.href = `./album.html?album=${id}`;
+  window.location.href = `http://localhost:3000/album.html?album=${id}`;
 };
 
 const getAlbums = async () => {
@@ -71,7 +71,7 @@ const deleteAlbum = async (elem) => {
         confirmButtonText: "Ok",
       });
 
-      window.location.href = `./index.html`;
+      window.location.href = `http://localhost:3000/index.html`;
     }
   } catch (error) {
     swal({
@@ -88,12 +88,12 @@ btnCreate.addEventListener("click", async () => {
     const validate = await axios.get("http://localhost:3000/me");
 
     if (validate.data.name == "JsonWebTokenError") {
-      document.location.href = "http://localhost:3000";
+      document.location.href = "http://localhost:3000/";
     } else {
-      document.location.href = "http://localhost:3000/addAlbum.html";
+      document.location.href = "http://localhost:3000/addAlbum";
     }
   } catch (error) {
-    window.location.href = "http://localhost:3000/login.html";
+    window.location.href = "http://localhost:3000/login";
   }
 });
 
@@ -110,12 +110,12 @@ btnOther.addEventListener("click", async () => {
 
     if (validate.data.name == "JsonWebTokenError") {
       alert("Usuario no identificado");
-      window.location.href = "http://localhost:3000/login.html";
+      window.location.href = "http://localhost:3000/login";
     } else {
-      document.location.href = "http://localhost:3000/index.html";
+      document.location.href = "http://localhost:3000/index";
     }
   } catch (error) {
-    window.location.href = "http://localhost:3000/login.html";
+    window.location.href = "http://localhost:3000/login";
   }
 });
 

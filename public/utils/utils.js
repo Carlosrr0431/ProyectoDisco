@@ -1,12 +1,12 @@
 const onLoad = async () => {
   try {
-    const validateResp = await axios.get("http://localhost:3000/me");
+    const validateResp = await axios.get("https://plataformadiscopledu.onrender.com/me");
 
     if (validateResp.data.name != "JsonWebTokenError") {
       avatarNombre.textContent = validateResp.data.nombre;
       avatarEmail.textContent = validateResp.data.email;
     } else {
-      window.location.href = "http://localhost:3000/login.html";
+      window.location.href = "https://plataformadiscopledu.onrender.com/login";
     }
   } catch (error) {
     console.error(error);

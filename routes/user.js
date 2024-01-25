@@ -22,7 +22,7 @@ const check = async (userPassword, dbPassword) => {
 };
 
 //Ruta para crear un usuario
-router.post("/usuarios", async (req, res) => {
+router.post("http://localhost:3000/usuarios", async (req, res) => {
   try {
     const contraseña = hashPassword(req.body.contraseña);
     const usuario = {
@@ -42,7 +42,7 @@ router.post("/usuarios", async (req, res) => {
 
 //Ruta para traer todos los usuarios sin mostrar la contraseña
 
-router.get("/usuarios", async (req, res) => {
+router.get("http://localhost:3000/usuarios", async (req, res) => {
   try {
     const usuarios = await User.find();
 
@@ -58,7 +58,7 @@ router.get("/usuarios", async (req, res) => {
 
 //Ruta para validar un usuario con login
 
-router.post("/login", async (req, res) => {
+router.post("http://localhost:3000/login", async (req, res) => {
   try {
     const usuario = await User.find({ email: req.body.email });
 
@@ -85,7 +85,7 @@ router.post("/login", async (req, res) => {
 
 //Ruta para editar los datos del usuario
 
-router.put("/usuarios/:id", async (req, res) => {
+router.put("http://localhost:3000/usuarios/:id", async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -103,7 +103,7 @@ router.put("/usuarios/:id", async (req, res) => {
 
 //Ruta para desloguear un usuario
 
-router.post("/logout", async (req, res) => {
+router.post("http://localhost:3000/logout", async (req, res) => {
   try {
     res.clearCookie("jwt");
 
@@ -115,7 +115,7 @@ router.post("/logout", async (req, res) => {
 
 //Ruta para validar usuario
 
-router.get("/me", async (req, res, next) => {
+router.get("http://localhost:3000/me", async (req, res, next) => {
   try {
     const token = req.cookies.jwt;
 

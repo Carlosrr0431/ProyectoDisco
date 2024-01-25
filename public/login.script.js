@@ -32,7 +32,7 @@ form.addEventListener("submit", async(e) => {
             icon: "success"
           });
 
-          window.location.href = "./index.html";
+          window.location.href = "http://localhost:3000/index";
         } else {
 
 
