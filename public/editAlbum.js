@@ -13,18 +13,18 @@ let url = document.getElementById('url')
 
 function editEvent() {
     
-  redirect(`./editAlbum.html?album=${albumId}`)
+  redirect(`/editAlbum.html?album=${albumId}`)
 }
 
 const addSongEvent = () => {
-    redirect(`./addSong.html?album=${albumId}`)
+    redirect(`/addSong.html?album=${albumId}`)
 }
 
 
 
 
 const cancelEvent = () => {
-  window.location.href=`./album.html?album=${albumId}`
+  window.location.href=`/album.html?album=${albumId}`
 }
 
 form.addEventListener("submit", e => {
@@ -45,7 +45,7 @@ form.addEventListener("submit", e => {
 const editAlbum = async (data) => {
 
   try {
-    const album = await axios.put(`http://localhost:3000/album/${albumId}`, data )
+    const album = await axios.put(`/album/${albumId}`, data )
 
 
     if ( album ) {
@@ -56,7 +56,7 @@ const editAlbum = async (data) => {
         confirmButtonText: 'Ok'
       }) 
 
-      window.location.href=`./album.html?album=${albumId}`
+      window.location.href=`/album.html?album=${albumId}`
     } else {
       console.log("No se pudo actualizar el album");
     }

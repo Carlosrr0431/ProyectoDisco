@@ -30,7 +30,7 @@ form.addEventListener("submit", e => {
 const editAlbum = async (data) => {
 
   try {
-    const album = await axios.post(`http://localhost:3000/album`, data )
+    const album = await axios.post(`/album`, data )
 
 
     if ( album ) {
@@ -66,7 +66,7 @@ btnLog.addEventListener('click',  () => {
 
 const limpiarCookies = async () => {
 
-  const cookies = await axios.post('http://localhost:3000/logout')
+  const cookies = await axios.post('/logout')
 
 
 

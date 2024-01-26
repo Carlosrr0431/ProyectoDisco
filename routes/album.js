@@ -6,7 +6,7 @@ const Album = require("../models/Album");
 
 //Ruta para crear un nuevo album
 
-router.post("http://localhost:3000/album", async (req, res) => {
+router.post("/album", async (req, res) => {
     try {
       const album = await Album.create(req.body);
   
@@ -22,7 +22,7 @@ router.post("http://localhost:3000/album", async (req, res) => {
   
   //Ruta para obtener los albums
   
-  router.get("http://localhost:3000/album", async (req, res) => {
+  router.get("/album", async (req, res) => {
     try {
       const albums = await Album.find();
   
@@ -38,7 +38,7 @@ router.post("http://localhost:3000/album", async (req, res) => {
   
   //Ruta para traer un album en especifico
   
-  router.get("http://localhost:3000/album/:id", async (req, res) => {
+  router.get("/album/:id", async (req, res) => {
     try {
       const albums = await Album.findById(req.params.id);
   
@@ -54,7 +54,7 @@ router.post("http://localhost:3000/album", async (req, res) => {
   
   //Ruta para eliminar un album
   
-  router.delete('http://localhost:3000/album/:id', async ( req, res ) => {
+  router.delete('/album/:id', async ( req, res ) => {
   
     try {
       const album = await Album.findByIdAndDelete(req.params.id)
@@ -73,7 +73,7 @@ router.post("http://localhost:3000/album", async (req, res) => {
   
   //Ruta para editar un album
   
-  router.put("http://localhost:3000/album/:id", async (req, res) => {
+  router.put("/album/:id", async (req, res) => {
     try {
       const album = await Album.findByIdAndUpdate(req.params.id, req.body, {
         new: true,
@@ -91,7 +91,7 @@ router.post("http://localhost:3000/album", async (req, res) => {
   
   //Ruta para agregar canciones
   
-  router.post("http://localhost:3000/canciones/:id?", async (req, res) => {
+  router.post("/canciones/:id?", async (req, res) => {
     try {
       const album = await Album.findById(req.params.id)
   
@@ -113,7 +113,7 @@ router.post("http://localhost:3000/album", async (req, res) => {
   
   //Ruta para quitar una cancion del album
   
-  router.put("http://localhost:3000/canciones/quitar/:id", async (req, res) => {
+  router.put("/canciones/quitar/:id", async (req, res) => {
     try {
       const album = await Album.findById(req.params.id)
   
@@ -137,7 +137,7 @@ router.post("http://localhost:3000/album", async (req, res) => {
   
   //Ruta para traer solo las canciones de cada album
   
-  router.get("http://localhost:3000/canciones/:id", async (req, res) => {
+  router.get("/canciones/:id", async (req, res) => {
     try {
       const canciones = await Album.findById(req.params.id, {
         canciones: 1,

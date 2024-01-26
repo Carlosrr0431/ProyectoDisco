@@ -39,7 +39,7 @@ const agregarCancion = async (data) => {
 
   console.log(albumId);
   try {
-    const album = await axios.post(`http://localhost:3000/canciones/${albumId}`, data )
+    const album = await axios.post(`/canciones/${albumId}`, data )
 
     console.log(data);
 

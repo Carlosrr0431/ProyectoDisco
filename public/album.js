@@ -117,7 +117,7 @@ const renderAlbum = (album) => {
 const getAlbum = async () => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/album/${window.location.search.substring(7)}`
+      `/album/${window.location.search.substring(7)}`
     );
 
     renderAlbum(response.data);
@@ -131,7 +131,7 @@ getAlbum();
 const deleteSong = async(elem) => {
 
   try {
-    const song = axios.put(`http://localhost:3000/canciones/quitar/${albumId}`, elem )
+    const song = axios.put(`/canciones/quitar/${albumId}`, elem )
 
     if (song) {
       swal({
@@ -141,7 +141,7 @@ const deleteSong = async(elem) => {
         confirmButtonText: 'Ok'
       })
 
-      window.location.href=`./album.html?album=${albumId}`
+      window.location.href=`/album.html?album=${albumId}`
     }
   } catch (error) {
     swal({

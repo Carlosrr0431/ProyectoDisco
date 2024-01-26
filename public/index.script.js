@@ -3,7 +3,9 @@ import { onLoad } from "./utils/utils.js";
 let flag = [true, true];
 let favoritos = [];
 
+// import axios from 'axios'
 
+// axios.defaults.baseURL = "https://plataformadiscopleduproject.onrender.com/";
 let h1log = document.getElementById("h1log");
 let btnlog = document.getElementById("btnlog");
 
@@ -44,12 +46,12 @@ let svgString3 = `
 
 
 const redirect = (id) => {
-  window.location.href = `http://localhost:3000/album.html?album=${id}`;
+  window.location.href = `/album.html?album=${id}`;
 };
 
 const getAlbums = async () => {
   try {
-    const response = await axios.get("http://localhost:3000/album");
+    const response = await axios.get("/album");
 
     response.data.map((elem) => {
       renderAlbum(elem);
@@ -61,7 +63,7 @@ const getAlbums = async () => {
 
 const deleteAlbum = async (elem) => {
   try {
-    const album = axios.delete(`http://localhost:3000/album/${elem._id}`, elem);
+    const album = axios.delete(`/album/${elem._id}`, elem);
 
     if (album) {
       swal({
@@ -71,7 +73,7 @@ const deleteAlbum = async (elem) => {
         confirmButtonText: "Ok",
       });
 
-      window.location.href = `http://localhost:3000/index.html`;
+      window.location.href = `/index.html`;
     }
   } catch (error) {
     swal({
@@ -85,15 +87,15 @@ const deleteAlbum = async (elem) => {
 
 btnCreate.addEventListener("click", async () => {
   try {
-    const validate = await axios.get("http://localhost:3000/me");
+    const validate = await axios.get("/me");
 
     if (validate.data.name == "JsonWebTokenError") {
-      document.location.href = "http://localhost:3000/";
+      document.location.href = "/";
     } else {
-      document.location.href = "http://localhost:3000/addAlbum";
+      document.location.href = "/addAlbum.html";
     }
   } catch (error) {
-    window.location.href = "http://localhost:3000/login";
+    window.location.href = "/login.html";
   }
 });
 
@@ -106,16 +108,16 @@ btnlog.addEventListener("click", () => {
 
 btnOther.addEventListener("click", async () => {
   try {
-    const validate = await axios.get("http://localhost:3000/me");
+    const validate = await axios.get("/me");
 
     if (validate.data.name == "JsonWebTokenError") {
       alert("Usuario no identificado");
-      window.location.href = "http://localhost:3000/login";
+      window.location.href = "/login.html";
     } else {
-      document.location.href = "http://localhost:3000/index";
+      document.location.href = "/index.html";
     }
   } catch (error) {
-    window.location.href = "http://localhost:3000/login";
+    window.location.href = "/login.html";
   }
 });
 
@@ -129,7 +131,7 @@ const gestionarCargaNormal = () => {
 };
 
 const limpiarCookies = async () => {
-  const cookies = await axios.post("http://localhost:3000/logout");
+  const cookies = await axios.post("/logout");
 };
 
 const renderAlbum = (albumRes) => {

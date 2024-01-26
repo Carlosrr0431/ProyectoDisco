@@ -17,7 +17,7 @@ form.addEventListener("submit", (e) => {
 
 const registrar = async (data) => {
   try {
-    const usuario = await axios.post("http://localhost:3000/usuarios", data);
+    const usuario = await axios.post("/usuarios", data);
 
     if (usuario) {
       
@@ -26,7 +26,7 @@ const registrar = async (data) => {
             text: ``,
             icon: "success"
           });
-      window.location.href = "./login.html";
+      window.location.href = "/login.html";
     } else console.log("No se pudo crear el usuario");
   } catch (error) {
     console.error(error);

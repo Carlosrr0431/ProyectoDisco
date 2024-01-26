@@ -1,13 +1,13 @@
 const onLoad = async () => {
   try {
-    const validateResp = await axios.get("https://plataformadiscopledu.onrender.com/me");
+    const validateResp = await axios.get("/me");
 
     if (validateResp.data.name != "JsonWebTokenError") {
       avatarNombre.textContent = validateResp.data.nombre;
       avatarEmail.textContent = validateResp.data.email;
     } else {
-      window.location.href = "https://plataformadiscopledu.onrender.com/login";
-    }
+      window.location.href = "/login.html";
+    } 
   } catch (error) {
     console.error(error);
   }

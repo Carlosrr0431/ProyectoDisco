@@ -32,7 +32,7 @@ form.addEventListener("submit", async(e) => {
             icon: "success"
           });
 
-          window.location.href = "http://localhost:3000/index";
+          window.location.href = "./";
         } else {
 
 
@@ -53,7 +53,7 @@ form.addEventListener("submit", async(e) => {
 
 const validateUser = async (data) => {
 
-  const login = await axios.post(`http://localhost:3000/login`, data)
+  const login = await axios.post(`/login`, data)
 
   if ( login.statusText = "OK"){
     return true
