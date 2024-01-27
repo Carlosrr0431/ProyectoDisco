@@ -2,21 +2,22 @@ const editAlbum = document.getElementById('editAlbum')
 const addSong = document.getElementById('addSong')
 const albumId = window.location.search.substring(7);
 
+const caracter = /%20/g;
+const cadena = albumId.replace(caracter, ' ')
+
 editAlbum.addEventListener('click', () => {
-  editAlbum.setAttribute('href', `/editAlbum.html?album=${window.location.search.substring(7)}`)
+  editAlbum.setAttribute('href', `/editAlbum.html?album=${cadena}`)
 })
 
 addSong.addEventListener('click', () => {
-  addSong.setAttribute('href', `/addSong.html?album=${window.location.search.substring(7)}` )
+  addSong.setAttribute('href', `/addSong.html?album=${cadena}` )
 })
-
-
-
-
 
 
 
 const renderAlbum = (album) => {
+
+
   const titulo = document.getElementById("titulo");
   const fechaVenta = document.getElementById("fecha");
   const tablaMayor = document.getElementById("tablaMayor");
@@ -24,7 +25,10 @@ const renderAlbum = (album) => {
   const fecha = new Date(album.fechaVenta);
   const dia = fecha.toLocaleDateString();
   const tabla = document.createElement("tbody");
+  const imagen = document.getElementById("imagen")
 
+
+  imagen.setAttribute('src', album.url)
   
   tabla.setAttribute("class", "border-collapse border-t border-slate-500");
   tablaMayor.appendChild(tabla);
@@ -115,12 +119,16 @@ const renderAlbum = (album) => {
 };
 
 const getAlbum = async () => {
+
+  const id = localStorage.getItem('idUsuario')
+
   try {
     const response = await axios.get(
-      `/album/${window.location.search.substring(7)}`
+      `/album/user/${id}/${cadena}`
     );
 
-    renderAlbum(response.data);
+      
+    renderAlbum(response.data[0]);
   } catch (error) {
     console.error(error);
   }
@@ -131,7 +139,7 @@ getAlbum();
 const deleteSong = async(elem) => {
 
   try {
-    const song = axios.put(`/canciones/quitar/${albumId}`, elem )
+    const song = axios.put(`/canciones/quitar/${cadena}`, elem )
 
     if (song) {
       swal({
@@ -141,7 +149,7 @@ const deleteSong = async(elem) => {
         confirmButtonText: 'Ok'
       })
 
-      window.location.href=`/album.html?album=${albumId}`
+      window.location.href=`/album.html?album=${cadena}`
     }
   } catch (error) {
     swal({

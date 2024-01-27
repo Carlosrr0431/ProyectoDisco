@@ -1,4 +1,3 @@
-
 let form = document.getElementById("form")
 
 form.addEventListener("submit", async(e) => {
@@ -51,9 +50,16 @@ form.addEventListener("submit", async(e) => {
     }
 })
 
+
+
+
 const validateUser = async (data) => {
 
   const login = await axios.post(`/login`, data)
+
+
+  localStorage.setItem("idUsuario", login.data._id )
+
 
   if ( login.statusText = "OK"){
     return true

@@ -1,5 +1,6 @@
 import { onLoad } from "./utils/utils.js";
 
+
 const buttonEdit = document.getElementById("buttonEdit");
 const buttonAddSong = document.getElementById("buttonAddSong")
 let form = document.getElementById("form")
@@ -30,7 +31,10 @@ form.addEventListener("submit", e => {
 const editAlbum = async (data) => {
 
   try {
-    const album = await axios.post(`/album`, data )
+
+    const datos = localStorage.getItem("idUsuario")
+
+    const album = await axios.post(`/albums/user/${datos}`, data )
 
 
     if ( album ) {

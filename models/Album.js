@@ -21,7 +21,7 @@ const Album = new mongoose.Schema({
     },
   ],
   portada: { type: String },
-  url: { type: String }
+  url: { type: String },
 });
 
 module.exports = mongoose.model("Album", Album);

@@ -2,10 +2,6 @@ import { onLoad } from "./utils/utils.js";
 
 let flag = [true, true];
 let favoritos = [];
-
-// import axios from 'axios'
-
-// axios.defaults.baseURL = "https://plataformadiscopleduproject.onrender.com/";
 let h1log = document.getElementById("h1log");
 let btnlog = document.getElementById("btnlog");
 
@@ -51,7 +47,11 @@ const redirect = (id) => {
 
 const getAlbums = async () => {
   try {
-    const response = await axios.get("/album");
+
+    
+    const datos = localStorage.getItem("idUsuario")
+
+    const response = await axios.get(`/album/user/${datos}`);
 
     response.data.map((elem) => {
       renderAlbum(elem);
@@ -63,7 +63,10 @@ const getAlbums = async () => {
 
 const deleteAlbum = async (elem) => {
   try {
-    const album = axios.delete(`/album/${elem._id}`, elem);
+
+    const datos = localStorage.getItem("idUsuario")
+
+    const album = await axios.delete(`/album/user/${elem.titulo}/${datos}`, elem);
 
     if (album) {
       swal({
@@ -134,6 +137,13 @@ const limpiarCookies = async () => {
   const cookies = await axios.post("/logout");
 };
 
+{/* <img
+src=""
+id="imagen"
+alt=""
+class="object-cover w-full rounded-t-lg h-12 ml-5 my-5 md:h-[200px] md:w-[200px] md:rounded-[20px]"
+/> */}
+
 const renderAlbum = (albumRes) => {
   const contenedorAlbum = document.getElementById("contenedorAlbum");
   const album = document.createElement("div");
@@ -184,9 +194,13 @@ const renderAlbum = (albumRes) => {
   div2.textContent = albumRes.titulo;
 
   img.addEventListener("click", (event) => {
-    redirect(albumRes._id);
+
+    // Seguir aqui... En el album.js tomar el titulo en vez del id, y buscar el album de acuerdo al titulo
+    //Para ser mostrado
+    redirect(albumRes.titulo);
+  
   });
-  img.setAttribute("class", "w-full rounded-[10px]");
+  img.setAttribute("class", "object-cover w-full h-[200px] my-3 w-[200px] rounded-[20px]");
   img.src = albumRes.url ? albumRes.url : "./assets/rescate-indudablemente.jpg"
 
   div3.appendChild(p);

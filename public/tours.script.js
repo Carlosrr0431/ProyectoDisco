@@ -1,11 +1,3 @@
-// let nombre = prompt("Ingresa tu nombre");
-
-// while (!nombre || nombre.length <= 3) {
-//     alert("Vuelva a ingresar su nombre con más de 3 digito")
-
-//     nombre = prompt("Ingresa tu nombre");
-// }
-
 let span = document.querySelector("#welcome")
 let tickets = [10, 10, 10, 10, 10]
 

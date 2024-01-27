@@ -1,30 +1,37 @@
-import { onLoad, redirect } from "./utils/utils";
+import { onLoad } from "./utils/utils.js";
 
 const buttonEdit = document.getElementById("buttonEdit");
 const buttonAddSong = document.getElementById("buttonAddSong")
+
+
 const albumId = window.location.search.substring(7);
+const caracter = /%20/g;
+const cadena = albumId.replace(caracter, ' ')
+
 let form = document.getElementById("form")
 let titulo = document.getElementById('titulo')
 let fechaVenta = document.getElementById('fechaVenta')
 let descripcion = document.getElementById('descripcion')
+let avatarNombre = document.getElementById("avatarNombre");
+let avatarEmail = document.getElementById("avatarEmail");
 let url = document.getElementById('url')
 
 
 
 function editEvent() {
     
-  redirect(`/editAlbum.html?album=${albumId}`)
+  window.location.href = `/editAlbum.html?album=${cadena}`
 }
 
 const addSongEvent = () => {
-    redirect(`/addSong.html?album=${albumId}`)
+  window.location.href = `/addSong.html?album=${cadena}`
 }
 
 
 
 
 const cancelEvent = () => {
-  window.location.href=`/album.html?album=${albumId}`
+  window.location.href=`/album.html?album=${cadena}`
 }
 
 form.addEventListener("submit", e => {
@@ -43,9 +50,11 @@ form.addEventListener("submit", e => {
 
 
 const editAlbum = async (data) => {
-
+  
   try {
-    const album = await axios.put(`/album/${albumId}`, data )
+    const userId = localStorage.getItem('idUsuario')
+
+    const album = await axios.put(`/album/user/${userId}/${cadena}`, data )
 
 
     if ( album ) {
@@ -56,7 +65,7 @@ const editAlbum = async (data) => {
         confirmButtonText: 'Ok'
       }) 
 
-      window.location.href=`/album.html?album=${albumId}`
+      window.location.href=`/album.html?album=${cadena}`
     } else {
       console.log("No se pudo actualizar el album");
     }
@@ -71,10 +80,6 @@ const editAlbum = async (data) => {
 }
 onLoad()
 
-cargaNormal()
+// cargaNormal()
 
-42.500
-255.000
-
-73.666
 
